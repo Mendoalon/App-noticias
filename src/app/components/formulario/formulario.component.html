@@ -6,31 +6,38 @@
             <form>
 
                 <div class="form-group">
-                    <select class="form-control form-control-lg"            
+                    <select [(ngModel)]="categoriaSelecionada"      
+                            class="form-control form-control-lg"            
                             name="categoria">
-                        <option>General</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option  *ngFor="let categoria of categorias"
+                                 
+                                 [value]="categoria.value">
+                                 {{ categoria.nombre }}
+                        </option>
+                     
                     </select>
                 </div>
 
                 <div class="form-group">
               
-                    <select class="form-control form-control-lg"
+                    <select [(ngModel)]="paisSelecionado"
+                            class="form-control form-control-lg"
                             name="pais">
-                        <option>Colombia</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                            <option  *ngFor="let pais of paises"
+                            
+                            [value]="pais.value">
+                            {{ pais.nombre }}
+                   </option>
                     </select>
                 </div>
 
             </form>
 
-            <button class="btn btn-primary btn-block btn-lg">Buscar</button>
+            <button  (click)="buscarNoticias()"
+                     class="btn btn-primary btn-block btn-lg"
+                     type="submit">
+                        Buscar
+            </button>
 
         </div>
     </div>
