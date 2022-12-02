@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-listado-noticias',
@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listado-noticias.component.css']
 })
 export class ListadoNoticiasComponent implements OnInit {
+  @Input() listadoNoticias: any;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor() { 
+
+    
   }
 
+  ngOnInit(): void {
+
+  }
+
+
+  
 }
